@@ -18,10 +18,6 @@ return require("packer").startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 
-	-- barber nvim
-	use("nvim-tree/nvim-web-devicons")
-	use({ "romgrk/barbar.nvim", requires = "nvim-web-devicons" })
-
 	-- Telescope Advanced Git Search
 	use({
 		"aaronhallaert/ts-advanced-git-search.nvim",
@@ -42,6 +38,7 @@ return require("packer").startup(function(use)
 			require("color-picker")
 		end,
 	})
+
 	-- barbecue
 	use({
 		"utilyre/barbecue.nvim",
@@ -149,12 +146,6 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	--[[ Formatter
-     use("mhartington/formatter.nvim")
-    -- neoformat
-    use("sbdchd/neoformat")
-    --]]
-
 	use({
 		"folke/which-key.nvim",
 		config = function()
@@ -244,12 +235,12 @@ return require("packer").startup(function(use)
 	-- Colorschemes - github
 	use("projekt0n/github-nvim-theme")
 
-	-- Colorschemes pywall
+	-- Colorschemes - pywall
 	use({ "AlphaTechnolog/pywal.nvim", as = "pywal" })
 
-	-- Colorschemes Tokonight
+	-- Colorschemes - Tokonight
 	use("folke/tokyonight.nvim")
 
-	-- Edge
+	-- Colorschemes - Edge
 	use("sainnhe/edge")
 end)

@@ -13,12 +13,10 @@ function Edge()
 end
 
 function ManageColors(color)
-	local default = "tokyobones"
+	local default = "meh"
 	color = color or default
 	vim.cmd.colorscheme(color)
-	--	vim.cmd("TransparentDisable")
-	-- Edge()
-	-- Fix Fidget color
+	--[[
 	vim.api.nvim_set_hl(0, "FidgetTask", { bg = "none", fg = "#70788a" })
 	vim.api.nvim_set_hl(0, "FidgetTitle", { bg = "none", fg = "#70788a" })
 
@@ -48,9 +46,8 @@ function ManageColors(color)
 	vim.api.nvim_set_hl(0, "DiffChange", { bg = "none", fg = "#ad8445" })
 	vim.api.nvim_set_hl(0, "DiffChangeDelete", { bg = "none", fg = "#ad8445" })
 	vim.api.nvim_set_hl(0, "DiffDelete", { bg = "none", fg = "#bd5c5c" })
-	vim.cmd([[ 
-        hi Normal guibg=none ctermbg=none
-    ]])
+	vim.cmd("hi Normal guibg=none ctermbg=none")
+    --]]
 end
 
 -- Quick functions for fave color schemes
@@ -66,4 +63,7 @@ function Pywall()
 	ManageColors("pywal")
 end
 
-Catppuccin()
+ManageColors("github_dark_dimmed")
+--Catppuccin()
+--Pywall()
+--Meh()

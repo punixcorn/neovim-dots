@@ -43,7 +43,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Default to case insensitive search
-vim.opt.ignorecase = true
+--vim.opt.ignorecase = true
 
 -- Use case sensitive search if pattern includes uppercase letter
 vim.opt.smartcase = true
@@ -77,3 +77,6 @@ vim.wo.signcolumn = "yes"
 -- Whitespace chars
 vim.opt.listchars = { tab = ">-", trail = "~", space = "·", eol = "↵" }
 vim.opt.whichwrap = "<,>,h,l,[,]"
+
+-- disable log
+vim.lsp.set_log_level("off")
