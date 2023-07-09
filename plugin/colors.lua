@@ -63,7 +63,7 @@ function Pywall()
 	ManageColors("pywal")
 end
 
-ManageColors("github_dark_dimmed")
+--ManageColors("github_dark_dimmed")
 --Catppuccin()
---Pywall()
+Pywall()
 --Meh()

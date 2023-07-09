@@ -38,6 +38,8 @@ return require("packer").startup(function(use)
 			require("color-picker")
 		end,
 	})
+	-- Vim tex
+	use("lervag/vimtex")
 
 	-- barbecue
 	use({
@@ -188,6 +190,7 @@ return require("packer").startup(function(use)
 	-- Fidget
 	use({
 		"j-hui/fidget.nvim",
+		tag = "legacy",
 		config = function()
 			require("fidget").setup({
 				text = { spinner = "bouncing_ball" },
