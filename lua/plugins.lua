@@ -96,9 +96,6 @@ return require("packer").startup(function(use)
 	-- Smoothie
 	use("psliwka/vim-smoothie")
 
-	-- Live-server
-	use("manzeloth/live-server")
-
 	-- Packer
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 

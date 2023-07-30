@@ -6,4 +6,6 @@
 
 > to install run `./.installconfig.sh`
 
+> install `chafa` & `python-pywal`
+
 > detailed folder structure in `./init.lua`
