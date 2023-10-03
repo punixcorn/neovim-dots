@@ -38,6 +38,7 @@ return require("packer").startup(function(use)
 			require("color-picker")
 		end,
 	})
+    
 	-- Vim tex
 	use("lervag/vimtex")
 
@@ -54,6 +55,15 @@ return require("packer").startup(function(use)
 			require("barbecue").setup()
 		end,
 	})
+
+    -- live server
+    use({
+      "aurum77/live-server.nvim",
+        run = function()
+          require"live_server.util".install()
+        end,
+        cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+      })
 
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
