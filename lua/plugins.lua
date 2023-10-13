@@ -38,7 +38,7 @@ return require("packer").startup(function(use)
 			require("color-picker")
 		end,
 	})
-    
+
 	-- Vim tex
 	use("lervag/vimtex")
 
@@ -56,24 +56,22 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-    -- live server
-    use({
-      "aurum77/live-server.nvim",
-        run = function()
-          require"live_server.util".install()
-        end,
-        cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
-      })
+	-- live server
+	use({
+		"aurum77/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+	})
 
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
 	use("nvim-treesitter/playground")
 
+	-- Zen mode
 	use("folke/zen-mode.nvim")
-
-	-- Create Person treesitter commands
-	use({ "axkirillov/easypick.nvim", requires = "nvim-telescope/telescope.nvim" })
 
 	-- Harpoon
 	use("theprimeagen/harpoon")

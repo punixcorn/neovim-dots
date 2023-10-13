@@ -27,7 +27,8 @@ local sources = {
 	formatting.stylua,
 	formatting.latexindent, -- latex
 	formatting.rustfmt, -- rust
- --    formatting
+	formatting.gofumpt, -- go
+	--    formatting
 	formatting.shfmt.with({
 		filetypes = { "sh", "zsh" },
 	}),

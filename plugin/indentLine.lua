@@ -1,32 +1,42 @@
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
+------------------
+--  indentLine.lua
+------------------
 
--- start underline and tab line
-vim.cmd([[highlight IndentBlanklineContextChar guifg=#ffffff gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineContextStart guisp=#ffffff gui=underline]])
+--  use pywal colors
+local pywal_core = require("pywal.core")
+local colors = pywal_core.get_colors()
 
-require("indent_blankline").setup({
-	space_char_blankline = " ",
-	show_current_context = true,
-	show_current_context_start = true,
-	show_end_of_line = true,
-	char_highlight_list = {
-		"IndentBlanklineIndent1",
-		"IndentBlanklineIndent2",
-		"IndentBlanklineIndent3",
-		"IndentBlanklineIndent4",
-		"IndentBlanklineIndent5",
-		"IndentBlanklineIndent6",
+local highlight = {
+	"PywalRed",
+	"PywalYellow",
+	"PywalBlue",
+	"PywalOrange",
+	"PywalGreen",
+	"PywalViolet",
+	"PywalCyan",
+}
+
+local hooks = require("ibl.hooks")
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+	vim.api.nvim_set_hl(0, "PywalRed", { fg = colors.color5 })
+	vim.api.nvim_set_hl(0, "PywalYellow", { fg = colors.color2 })
+	vim.api.nvim_set_hl(0, "PywalBlue", { fg = colors.color3 })
+	vim.api.nvim_set_hl(0, "PywalOrange", { fg = colors.color6 })
+	vim.api.nvim_set_hl(0, "PywalGreen", { fg = colors.color1 })
+	vim.api.nvim_set_hl(0, "PywalViolet", { fg = colors.color4 })
+	vim.api.nvim_set_hl(0, "PywalCyan", { fg = colors.color7 })
+end)
+
+require("ibl").setup({
+	indent = {
+		smart_indent_cap = true,
+		highlight = highlight,
 	},
+	whitespace = {
+		highlight = highlight,
+		remove_blankline_trail = false,
+	},
+	scope = { enabled = false },
 })
-
-if true then
-	if false then
-		print("ect")
-	end
-	print("k")
-end

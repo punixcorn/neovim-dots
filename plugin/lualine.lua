@@ -4,7 +4,7 @@ local ok, lualine = pcall(require, "lualine")
 if not ok then
 	return
 end
-local theme = "tokyobones"
+local theme = auto
 lualine.setup({
 	options = {
 		icons_enabled = true,
